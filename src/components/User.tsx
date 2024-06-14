@@ -3,7 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { getUser } from '../services/authService';
 
 // Define a type for User
-type User = {
+type UserType = {
   username: string;
   name: string;
   email: string;
@@ -12,7 +12,7 @@ type User = {
 
 const User: React.FC = () => {
   // Declare the type of the user state variable
-  const [user, setUser] = useState<User | null>(null);
+  const [user, setUser] = useState<UserType | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
