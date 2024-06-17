@@ -17,7 +17,6 @@ const User: React.FC = () => {
   useEffect(() => {
     const fetchUser = async () => {
       const token = localStorage.getItem('accessToken');
-      console.log(token);
       if (token) {
         const fetchedUser = await getUser(token);
         setUser(fetchedUser);

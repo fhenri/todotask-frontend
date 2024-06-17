@@ -1,7 +1,8 @@
 // src/services/authService.ts
 import axios from 'axios';
 
-const API_URL = 'https://api.todotask.cloud06.io/api';
+//const API_URL = 'https://api.todotask.cloud06.io/api';
+const API_URL = 'http://localhost:8080/api';
 
 export interface SignInResponse {
   accessToken: string;
