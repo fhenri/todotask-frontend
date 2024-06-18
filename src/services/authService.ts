@@ -1,8 +1,13 @@
 // src/services/authService.ts
 import axios from 'axios';
+import { config } from '../Constants'
 
 //const API_URL = 'https://api.todotask.cloud06.io/api';
-const API_URL = 'http://localhost:8080/api';
+//const API_URL = 'http://localhost:8080/api';
+
+const instance = axios.create({
+  baseURL: config.url.API_BASE_URL
+})
 
 export interface SignInResponse {
   accessToken: string;
@@ -16,12 +21,13 @@ export interface User {
 }
 
 export const signIn = async (login: string, password: string): Promise<SignInResponse> => {
-  const response = await axios.post<SignInResponse>(`${API_URL}/auth/signin`, { login, password });
+    console.log(process.env.NODE_ENV)
+  const response = await instance.post<SignInResponse>('/auth/signin', { login, password });
   return response.data;
 };
 
 export const getUser = async (token: string): Promise<User> => {
-  const response = await axios.get<User>(`${API_URL}/user/me`, {
+  const response = await instance.get<User>('/user/me', {
     headers: {
       Authorization: `Bearer ${token}`
     }

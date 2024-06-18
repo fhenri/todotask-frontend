@@ -57,7 +57,7 @@ const Login: React.FC = () => {
             <div className="bg-gray-100 p-8 rounded">
                 <h2 className="font-bold text-2xl">Instructions</h2>
                 <ul className="list-disc mt-4 list-inside">
-                    <li>This is not an open app, send an email to fhenri@cloud06.io if you require real account.</li>
+                    <li>This app is not an opened to public, send an email to fhenri@cloud06.io if you require real account.</li>
                     <li>You can use the <span className="font-bold">tododemo / tododemo</span> account to test the app.</li>
                     <li>All data from the tododemo account are removed on daily basis, demo account also cannot send mails.</li>
                 </ul>
